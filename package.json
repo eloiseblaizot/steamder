@@ -1,0 +1,33 @@
+{
+  "name": "steamder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "STEAMDER — your relationships, but as a Steam library.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "db:reset": "node --experimental-strip-types scripts/seed.ts --reset",
+    "db:seed": "node --experimental-strip-types scripts/seed.ts",
+    "enrich": "node --experimental-strip-types --env-file=.env.local scripts/enrich.ts",
+    "db:wipe": "node -e \"const{rmSync}=require('fs');for(const f of ['steamder.db','steamder.db-shm','steamder.db-wal'])rmSync('data/'+f,{force:true});console.log('database wiped')\""
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "next": "^15.4.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sharp": "^0.35.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.8.0"
+  }
+}
