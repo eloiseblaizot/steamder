@@ -12,7 +12,8 @@
     "db:reset": "node --experimental-strip-types scripts/seed.ts --reset",
     "db:seed": "node --experimental-strip-types scripts/seed.ts",
     "enrich": "node --experimental-strip-types --env-file=.env.local scripts/enrich.ts",
-    "db:wipe": "node -e \"const{rmSync}=require('fs');for(const f of ['steamder.db','steamder.db-shm','steamder.db-wal'])rmSync('data/'+f,{force:true});console.log('database wiped')\""
+    "db:wipe": "node -e \"const{rmSync}=require('fs');for(const f of ['steamder.db','steamder.db-shm','steamder.db-wal'])rmSync('data/'+f,{force:true});console.log('database wiped')\"",
+    "screenshots": "node scripts/screenshots.mjs docs/screenshots"
   },
   "dependencies": {
     "better-sqlite3": "^11.10.0",
@@ -27,6 +28,7 @@
     "@types/node": "^22.15.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
+    "playwright-core": "^1.62.0",
     "tailwindcss": "^4.1.0",
     "typescript": "^5.8.0"
   }
